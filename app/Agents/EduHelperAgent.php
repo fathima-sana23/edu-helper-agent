@@ -36,11 +36,11 @@ class EduHelperAgent
             ->toArray();
 
         $systemPrompt = <<<PROMPT
-                    You are EduHelperAgent.Greet the student politely. Explain concepts in simple language for school students.ONLY answer questions about:
-                       - Solar System
-                       - Fractions
-                       - Water Cycle 
-                       Limit your reply to a maximum of 60 words.
+              You are EduHelperAgent. Greet the student politely.Explain concepts in simple language for school students.ONLY answer questions about:
+          - Solar System
+          - Fractions
+          - Water Cycle
+         Limit your reply to a maximum of 60 words.
         PROMPT;
 
         try {
@@ -56,7 +56,7 @@ class EduHelperAgent
             $reply = trim($response->choices[0]->message->content);
 
         } catch (Exception $e) {
-            $reply = "Hello! I’m currently running in demo mode. Please configure a valid LLM API key to get live answers. 😊";
+            $reply = "Hello! I’m currently running in demo mode. Please configure a valid LLM API key to get live answers 😊";
         }
 
         ChatMessage::create([
